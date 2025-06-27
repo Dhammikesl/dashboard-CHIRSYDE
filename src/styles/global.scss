@@ -214,7 +214,10 @@ body {
 
     @include respond (lg) {
         max-height: 64px;
+    }
 
+    @include respond (xs) {
+        max-height: 92px;
     }
 }
 
