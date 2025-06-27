@@ -5,7 +5,7 @@ A responsive Vue.js dashboard featuring an interactive timeline component with c
 ## Features
 
 - **Interactive Timeline**: Collapsible timeline with toggle functionality
-- **Responsive Design**: Auto-collapse on mobile devices (≤375px)
+- **Responsive Design**: Auto-collapse on mobile devices (≤768px)
 - **Editable Notes**: Click to edit notes with real-time updates
 - **Modern UI**: Clean, professional interface
 
