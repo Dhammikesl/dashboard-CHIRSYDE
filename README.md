@@ -1,4 +1,4 @@
-# Vue Timeline Project
+# dashboard-CHIRSYDE
 
 A responsive Vue.js dashboard featuring an interactive timeline component with collapsible functionality and editable notes.
 
@@ -22,7 +22,7 @@ Before running this project, make sure you have the following installed:
 
    ```bash
    git clone <repository-url>
-   cd vue-timeline-project
+   cd dashboard-CHIRSYDE
    ```
 
 2. **Install dependencies**
