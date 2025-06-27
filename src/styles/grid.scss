@@ -1,0 +1,116 @@
+@use './variables' as *;
+
+@use "sass:map";
+@use "sass:math";
+
+$grid-columns: 12;
+$gutter: 1.25rem;
+
+
+$breakpoints: (
+    xs: 576px,
+    sm: 768px,
+    md: 991px,
+    lg: 1024px,
+    xl: 1280px,
+    xxl: 1440px,
+);
+
+$container-max-widths: (
+    xs: 100%,
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1440px,
+);
+
+$container-max-width: 1440px;
+
+$container-padding: 1rem;
+$container-padding-sm: 2rem;
+$container-padding-md: 3rem;
+$container-padding-lg: 5rem;
+$container-padding-xxl: 1rem 5rem;
+
+
+@mixin respond($breakpoint) {
+    @media (max-width: map.get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: $container-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @each $breakpoint, $container-width in $container-max-widths {
+        @if map.has-key($breakpoints, $breakpoint) {
+            @include respond($breakpoint) {
+                max-width: $container-width;
+            }
+        }
+    }
+
+
+    @include respond(lg) {
+        padding-left: $container-padding-lg;
+        padding-right: $container-padding-lg;
+    }
+
+    @include respond(md) {
+        padding-left: $container-padding-md;
+        padding-right: $container-padding-md;
+    }
+
+    @include respond(sm) {
+        padding-left: $container-padding-sm;
+        padding-right: $container-padding-sm;
+    }
+}
+
+.container-fluid {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+}
+
+.col {
+    flex: 1 0 0;
+    max-width: 100%;
+    padding-left: $gutter;
+    padding-right: $gutter;
+}
+
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        flex: 0 0 math.percentage(math.div($i, $grid-columns));
+        max-width: math.percentage(math.div($i, $grid-columns));
+        padding-left: $gutter;
+        padding-right: $gutter;
+    }
+
+    @each $breakpoint, $value in $breakpoints {
+        @include respond($breakpoint) {
+            .col-#{$breakpoint}-#{$i} {
+                flex: 0 0 math.percentage(math.div($i, $grid-columns));
+                max-width: math.percentage(math.div($i, $grid-columns));
+                padding-left: $gutter;
+                padding-right: $gutter;
+            }
+        }
+    }
+}
