@@ -211,10 +211,11 @@ body {
     max-height: 44px;
     border-bottom: 1px solid $color-border;
     box-shadow: $box-shadow;
+
     @include respond (lg) {
-           max-height: 64px;
-            
-        }
+        max-height: 64px;
+
+    }
 }
 
 .breadcrumb {
@@ -241,7 +242,11 @@ body {
         }
 
         @include respond (lg) {
-           font-size: $font-size-12;
+            font-size: $font-size-12;
+        }
+
+        @include respond (xs) {
+            align-items: normal;
         }
     }
 }
