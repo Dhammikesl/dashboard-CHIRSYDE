@@ -57,7 +57,9 @@ export default {
 <template>
     <nav class="sidebar" :class="{ open: isOpen }">
         <div class="sidebar-brand">
-            <h2>CHAIRSIDE</h2>
+            <a href="/" class="navbarlogo w-nav-brand" aria-label="home"><img
+                    src="https://cdn.prod.website-files.com/67163c8a1296ee10c03f4ab3/67f4ed5c1cf06beff9b5f819_Logo.webp"
+                    loading="lazy" alt="" class="navbarlogoimg"></a>
         </div>
         <div class="sidebar-nav-wrapper">
             <ul class="sidebar-nav">
@@ -78,7 +80,7 @@ export default {
                         <span>Robert Lindley</span>
                         <span class="email">robertlindley@shoreditchdesign.com</span>
                     </div>
-                    
+
                 </div>
             </ul>
         </div>
@@ -91,5 +93,19 @@ export default {
     height: 18px;
     margin-right: 10px;
     vertical-align: middle;
+}
+
+.navbarlogo {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 143px;
+    height: 100%;
+    display: flex;
+
+    img {
+        max-height: 22px;
+
+    }
 }
 </style>
