@@ -11,7 +11,7 @@ export default {
             {
                 icon: 'fas fa-pen',
                 iconClass: 'bg-success',
-                title: '<a href="https://dhammike.com/" target="_blank" class="text-primary">Consent form </a> signed',
+                title: '<a href="https://dhammike.com/" target="_blank" rel="noopener noreferrer class="text-primary">Consent form </a> signed',
                 time: '09:45 AM'
             },
             {
@@ -24,20 +24,20 @@ export default {
             {
                 icon: 'fas fa-plane',
                 iconClass: 'bg-warning',
-                title: '<a href="https://dhammike.com/" target="_blank" class="text-primary">Bundle2 </a> sent',
+                title: '<a href="https://dhammike.com/" target="_blank" rel="noopener noreferrer class="text-primary">Bundle2 </a> sent',
                 description: 'johnsmith@gmail.com',
                 time: '3 July, 16:15 PM'
             },
             {
                 icon: 'fas fa-remove',
                 iconClass: 'bg-danger',
-                title: '<a href="https://dhammike.com/" target="_blank" class="text-primary">Consent form </a> decline',
+                title: '<a href="https://dhammike.com/" target="_blank" rel="noopener noreferrer class="text-primary">Consent form </a> decline',
                 time: '3 July, 12:54 PM'
             },
             {
                 icon: 'fas fa-eye',
                 iconClass: 'bg-purple',
-                title: '<a href="https://dhammike.com/" target="_blank" class="text-primary">Bundle1 </a> view',
+                title: '<a href="https://dhammike.com/" target="_blank" rel="noopener noreferrer class="text-primary">Bundle1 </a> view',
                 description: 'Emergency form',
                 time: '3 July, 12:54 PM AM'
             },
@@ -45,7 +45,7 @@ export default {
             {
                 icon: 'fas fa-plane',
                 iconClass: 'bg-white',
-                title: '<a href="https://dhammike.com/" target="_blank" class="text-primary">Bundle1 </a> sent',
+                title: '<a href="https://dhammike.com/" target="_blank" rel="noopener noreferrer class="text-primary">Bundle1 </a> sent',
                 description: 'Emergency form',
                 time: '1 July, 10:05 AM'
             },
@@ -63,7 +63,7 @@ export default {
             {
                 icon: 'fas fa-video',
                 iconClass: 'bg-info',
-                title: 'Periodontics video played',
+                title: '<a href="https://www.youtube.com/watch?v=CRwpBxsIvuE&ab_channel=DHEntertainment" rel="noopener noreferrer  target="_blank" class="text-primary">Periodontics video </a> played',
                 description: 'Video completed',
                 time: '09:45 AM'
             },
@@ -103,7 +103,7 @@ export default {
             if (isMobile.value) {
                 isCollapsed.value = false;
             }
-            
+
         };
 
         onMounted(() => {
@@ -146,6 +146,7 @@ export default {
                 </div>
                 <div v-if="!isCollapsed" class="timeline-content">
                     <div class="timeline-time">{{ item.time }}</div>
+                    <!-- <div class="timeline-sub-title">{{ item.title }}</div> -->
                     <div class="timeline-sub-title" v-html="item.title"></div>
                     <div v-if="item.description" class="timeline-desc">{{ item.description }}</div>
 
@@ -164,7 +165,8 @@ export default {
                 </div>
                 <div v-if="!isCollapsed" class="timeline-content">
                     <div class="timeline-time">{{ item.time }}</div>
-                    <div class="timeline-sub-title">{{ item.title }}</div>
+                    <div class="timeline-sub-title" v-html="item.title"></div>
+                    <!-- <div class="timeline-sub-title">{{ item.title }}</div> -->
                     <div v-if="item.description" class="timeline-desc">{{ item.description }}</div>
 
                 </div>
